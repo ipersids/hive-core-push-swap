@@ -6,11 +6,11 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:09:46 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/16 02:25:06 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:13:00 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/// @note delete debugging print in ps_lst_free.
+/// @note delete debugging headers
 #include <stdio.h>
 /// <<< end of notes
 
@@ -33,11 +33,14 @@ t_push_swap	*ps_lst_new(int num);
 size_t		ps_lst_len(t_push_swap *start);
 t_push_swap	*ps_lst_add_front(t_push_swap **lst, t_push_swap *new_node);
 void		ps_lst_free(t_push_swap **lst);
+t_push_swap	*ps_lst_find_last(t_push_swap **lst);
 
 /* -------------------------------- Commands ------------------------------- */
 
 void		ps_swap(t_push_swap **a, t_push_swap **b);
 void		ps_push_a(t_push_swap **a, t_push_swap **b);
 void		ps_push_b(t_push_swap **b, t_push_swap **a);
+void		ps_rotate(t_push_swap **a, t_push_swap **b);
+void		ps_reverse_rotate(t_push_swap **a, t_push_swap **b);
 
 #endif

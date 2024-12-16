@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:17:17 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/15 18:19:10 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/16 14:24:37 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,21 @@ void	ps_lst_free(t_push_swap **lst)
 	tmp = *lst;
 	while (tmp)
 	{
-		printf("Freeing node p=%p, num=%d\n", tmp, tmp->num);
 		(*lst) = (*lst)->next;
 		free(tmp);
 		tmp = (*lst);
 	}
 	*lst = NULL;
+}
+
+t_push_swap	*ps_lst_find_last(t_push_swap **lst)
+{
+	t_push_swap	*curr;
+
+	if (!lst || !(*lst))
+		return (NULL);
+	curr = (*lst);
+	while (curr->next)
+		curr = curr->next;
+	return (curr);
 }
