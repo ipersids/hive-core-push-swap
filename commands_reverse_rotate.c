@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:57:11 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/16 19:18:49 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:09:09 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	ps_reverse_rotate(t_push_swap **a, t_push_swap **b)
 	if (!rra && !rrb)
 		return ;
 	if (!rra)
-		write(1, "rrb\n", 3);
+		write(1, "rrb\n", 4);
 	else if (!rrb)
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 	else
-		write(1, "rrr\n", 3);
+		write(1, "rrr\n", 4);
 }
 
 /* ------------------- Private Function Implementation --------------------- */
