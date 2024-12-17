@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   utils_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:17:17 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/17 16:04:32 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:14:17 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t	ps_lst_len(t_push_swap *start)
 
 t_push_swap	*ps_lst_add_back(t_push_swap **lst, t_push_swap *new_node)
 {
-	t_push_swap *last;
+	t_push_swap	*last;
 
 	if (!lst || !new_node)
 		return (NULL);
