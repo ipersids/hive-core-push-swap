@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:09:46 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/16 19:13:00 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:27:37 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# include "libft.h"
+
 typedef struct s_push_swap
 {
 	int					num;
@@ -31,7 +33,7 @@ typedef struct s_push_swap
 
 t_push_swap	*ps_lst_new(int num);
 size_t		ps_lst_len(t_push_swap *start);
-t_push_swap	*ps_lst_add_front(t_push_swap **lst, t_push_swap *new_node);
+t_push_swap	*ps_lst_add_back(t_push_swap **lst, t_push_swap *new_node);
 void		ps_lst_free(t_push_swap **lst);
 t_push_swap	*ps_lst_find_last(t_push_swap **lst);
 

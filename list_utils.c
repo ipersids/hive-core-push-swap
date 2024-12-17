@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:17:17 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/16 14:24:37 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:56:34 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ size_t	ps_lst_len(t_push_swap *start)
 	return (len);
 }
 
-t_push_swap	*ps_lst_add_front(t_push_swap **lst, t_push_swap *new_node)
+t_push_swap	*ps_lst_add_back(t_push_swap **lst, t_push_swap *new_node)
 {
+	t_push_swap *last;
+
 	if (!lst || !new_node)
 		return (NULL);
 	if (!(*lst))
@@ -52,10 +54,10 @@ t_push_swap	*ps_lst_add_front(t_push_swap **lst, t_push_swap *new_node)
 		*lst = new_node;
 		return (*lst);
 	}
-	new_node->next = *lst;
-	(*lst)->prev = new_node;
-	*lst = new_node;
-	return (*lst);
+	last = ps_lst_find_last(lst);
+	last->next = new_node;
+	new_node->prev = last;
+	return (last->next);
 }
 
 void	ps_lst_free(t_push_swap **lst)
