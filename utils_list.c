@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:17:17 by ipersids          #+#    #+#             */
-/*   Updated: 2024/12/17 13:56:34 by ipersids         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:04:32 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_push_swap	*ps_lst_new(int num)
 
 	node = (t_push_swap *) malloc(sizeof(t_push_swap));
 	if (!node)
-	{
-		write(1, "Error: Memory allocation fails.\n", 32);
 		return (NULL);
-	}
 	node->num = num;
 	node->prev = NULL;
 	node->next = NULL;
