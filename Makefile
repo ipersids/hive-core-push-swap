@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/17 14:18:48 by ipersids          #+#    #+#              #
-#    Updated: 2024/12/17 16:09:23 by ipersids         ###   ########.fr        #
+#    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
+#    Updated: 2025/01/05 13:51:26 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,7 @@ HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include
 LIBS			:= -L$(SUBM_LIBFT_DIR) -lft
 
 # Sources and objects
-SRCS			:= commands_push.c commands_reverse_rotate.c commands_rotate.c \
-				   commands_swap.c utils_list.c stack_init.c \
+SRCS			:= 
 
 SRC_MAIN		:= main.c
 OBJS			:= $(SRCS:%.c=%.o)
@@ -71,7 +70,7 @@ build-submodule:
 
 # TESTING
 TEST_NAME		:= test_main
-TEST_SRCS		:= _test_main.c
+TEST_SRCS		:= test_main.c
 TEST_OBJS		:= $(TEST_SRCS:%.c=%.o)
 
 test: update-submodule build-submodule $(TEST_NAME)
