@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/05 13:51:26 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/05 19:20:03 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,12 @@ SUBM_LIBFT_LIB	:= $(SUBM_LIBFT_DIR)/libft$(LIB_EXT)
 # Compilation variables
 CC				:= clang
 CFLAGS			:= -Wall -Wextra -Werror
-HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include
+HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include -Iinclude
 LIBS			:= -L$(SUBM_LIBFT_DIR) -lft
 
 # Sources and objects
-SRCS			:= 
+SRCS			:= src/checker/input_check.c \
+				   src/service-utils/error_exit.c src/service-utils/memory_free.c \
 
 SRC_MAIN		:= main.c
 OBJS			:= $(SRCS:%.c=%.o)
