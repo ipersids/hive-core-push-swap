@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   circular_buffer_commands.c                         :+:      :+:    :+:   */
+/*   queue_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 13:37:07 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/06 14:12:41 by ipersids         ###   ########.fr       */
+/*   Created: 2025/01/06 21:00:12 by ipersids          #+#    #+#             */
+/*   Updated: 2025/01/06 21:03:33 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "circular_buffer.h"
 
-void	cb_swap(t_circ_buf *buf)
+/**
+ * @brief Frees buffer memory of the queue structure.
+ * 
+ * @param stack Pointer to the queue (the circular buffer) structure.
+ */
+void	queue_free(t_queue *stack)
 {
-	if (!buf || cb_empty(buf) || cb_next_indx(buf, buf->head) == buf->tail + 1)
+	if (!stack)
 		return ;
-	
-} 
+	if (stack->buf)
+		free(stack->buf);
+}
