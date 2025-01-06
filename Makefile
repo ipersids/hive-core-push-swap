@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/05 19:20:03 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/05 22:23:28 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,12 @@ HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include -Iinclude
 LIBS			:= -L$(SUBM_LIBFT_DIR) -lft
 
 # Sources and objects
-SRCS			:= src/checker/input_check.c \
-				   src/service-utils/error_exit.c src/service-utils/memory_free.c \
+SRCS			:= src/data/input_check.c \
+				   \
+				   src/service-utils/error_exit.c \
+				   src/service-utils/memory_free.c \
+				   \
+				   src/circular-buffer/circular_buffer_utils.c \
 
 SRC_MAIN		:= main.c
 OBJS			:= $(SRCS:%.c=%.o)
