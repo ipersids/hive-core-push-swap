@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 20:23:46 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/05 22:09:47 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:23:04 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 typedef struct s_circ_buf
 {
 	int		*buf;
-	size_t	read;
-	size_t	write;
+	size_t	head;
+	size_t	tail;
 	size_t	maxlen;
 }			t_circ_buf;
 
@@ -43,52 +43,25 @@ enum	e_command
 /* ------------- src/circular-buffer/circular_buffer_utils.c ---------------- */
 /* -------------------------------------------------------------------------- */
 
-/**
- * @brief Initializes a circular buffer.
- * 
- * This function initializes a circular buffer with a given maximum length.
- * It allocates memory for the buffer and sets the read and write indices to 0.
- * 
- * @param buffer Pointer to the circular buffer structure.
- * @param maxlen Maximum length of the circular buffer.
- * @return t_bool Returns TRUE (1) if the buffer is successfully initialized, 
- * 				  FALSE (0) otherwise.
- */
-t_bool	circular_buf_init(t_circ_buf *buffer, size_t maxlen);
+t_bool	cb_init(t_circ_buf *buf, size_t maxlen);
+t_bool	cb_fill(t_circ_buf *buf, int *src, size_t src_len);
+t_bool	cb_full(const t_circ_buf *buf);
+t_bool	cb_empty(const t_circ_buf *buf);
+t_bool	cb_put(t_circ_buf *buf, int num);
 
-/**
- * @brief Fills a circular buffer with data from a source array.
- * 
- * This function fills a circular buffer with data from a given source array.
- * It iterates through the source array and puts each element into the buffer.
- * 
- * @param buffer Pointer to the circular buffer structure.
- * @param src Pointer to the source array.
- * @param src_len Length of the source array.
- * @return t_bool Returns TRUE if the buffer is successfully filled, 
- * 				  FALSE otherwise.
- */
-t_bool	circular_buf_fill(t_circ_buf *buffer, int *src, size_t src_len);
-
-/**
- * @brief Checks if a circular buffer is full.
- * 
- * @param buffer Pointer to the circular buffer structure.
- * @return t_bool Returns TRUE if the buffer is full, FALSE otherwise.
- */
-t_bool	circular_buf_full(const t_circ_buf *buffer);
-
-/**
- * @brief Puts an element into the circular buffer.
- * 
- * This function adds an element to the circular buffer. If the buffer is full,
- * it will not add the element and will return FALSE.
- * 
- * @param buffer Pointer to the circular buffer structure.
- * @param num The element to be added to the buffer.
- * @return t_bool Returns TRUE if the element is successfully added, 
- * 				  FALSE if the buffer is full.
- */
-t_bool	circular_buf_put(t_circ_buf *buffer, int num);
+size_t	cb_next_head(t_circ_buf *buf);
+size_t	cb_prev_tail(t_circ_buf *buf);
+size_t	cb_get_size(t_circ_buf *buf);
  
+/* -------------------------------------------------------------------------- */
+/* ------------ src/circular-buffer/circular_buffer_commands.c -------------- */
+/* -------------------------------------------------------------------------- */
+
+void	cb_swap(t_circ_buf *buf);
+void	cb_push(t_circ_buf *buf);
+void	cb_rotate(t_circ_buf *buf);
+void	cb_rev_rotate(t_circ_buf *buf);
+
+
+
 #endif

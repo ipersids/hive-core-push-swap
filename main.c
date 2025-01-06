@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 15:49:23 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/05 23:31:20 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:31:33 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("\n\n");
 	ft_printf("%d\n", numbers_size);
-	if (!circular_buf_init(&stack, numbers_size))
+	if (!circular_buf_init(&stack, numbers_size + 1))
 	{
 		ft_printf("1\n");
 		free(numbers);
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 		ps_exit_error(EXIT_FAILURE);
 	}
 	ft_printf("\n");
-	for (size_t i = stack.read; i < stack.write; i++) {
+	for (size_t i = stack.head; i <= stack.tail; i++) {
 		ft_printf("%d, ", stack.buf[i]);
 	}
 	ft_printf("\n");
