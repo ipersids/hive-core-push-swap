@@ -6,13 +6,13 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:13:35 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/05 19:20:49 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:14:21 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*free_all(void *arr1, void **arr2)
+void	*ps_free_arrays(void *arr1, void **arr2)
 {
 	int	i;
 

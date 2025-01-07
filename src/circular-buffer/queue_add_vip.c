@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:41:48 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/06 20:56:56 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:52:43 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ t_bool	queue_add_vip(t_queue *stack, int num)
 
 	if (queue_full(stack))
 		return (FALSE);
-	index = (stack->read - 1) % stack->size;
 	if (0 == stack->read)
 		index = stack->size - 1;
+	else
+		index = (stack->read - 1) % stack->size;
 	stack->buf[index] = num;
 	stack->read = index;
 	stack->len = stack->len + 1;
