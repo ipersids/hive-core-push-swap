@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 15:42:28 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:07:29 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,15 @@ int		*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size);
 void	ps_rank_ascending(t_queue *dest, int *src, size_t src_len);
 t_bool	ps_sorted_ascending(const int *src, size_t src_len);
 t_bool	ps_stacks_init(t_data *data);
+
+void	ps_save_command(t_data *data, t_command command);
+void 	ps_swap_a(t_data *data);
+void	ps_swap_b(t_data *data);
+void	ps_push_a(t_data *data);
+void	ps_push_b(t_data *data);
+void	ps_rotate_a(t_data *data);
+void	ps_rotate_b(t_data *data);
+void	ps_rev_rotate_a(t_data *data);
+void	ps_rev_rotate_b(t_data *data);
 
 #endif
