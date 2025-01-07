@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/06 21:16:39 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/07 15:48:02 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,16 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/circular-buffer/queue_full.c \
 				   src/circular-buffer/queue_init.c \
 				   \
-				   src/data/input_check.c \
+				   src/destructor/ps_destroy_data_exit.c \
+				   src/destructor/ps_free_arrays.c \
 				   \
-				   src/service-utils/error_exit.c \
-				   src/service-utils/memory_free.c \
+				   src/initialisation/ps_data_init.c \
+				   src/initialisation/ps_get_numbers.c \
+				   src/initialisation/ps_rank_ascending.c \
+				   src/initialisation/ps_sorted_ascending.c \
+				   src/initialisation/ps_stacks_init.c \
 
-SRC_MAIN		:= main.c
+SRC_MAIN		:= src/main.c
 OBJS			:= $(SRCS:%.c=%.o)
 OBJ_MAIN		:= $(SRC_MAIN:%.c=%.o)
 
