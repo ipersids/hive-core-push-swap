@@ -54,6 +54,7 @@ dkms.conf
 
 # EDA
 .vscode
+.DS_Store
 
 # test
 *test*

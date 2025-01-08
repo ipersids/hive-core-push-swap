@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:50:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 15:46:44 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:59:54 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_data data;
+	t_data 		data;
+	t_partition	part;
 
 	ps_data_init(&data);
 	ps_get_numbers(argc, argv, &data.input.num, &data.input.len);
@@ -24,6 +25,8 @@ int	main(int argc, char **argv)
 		ps_destroy_data_exit(&data, EXIT_SUCCESS);
 	if (!ps_stacks_init(&data))
 		ps_destroy_data_exit(&data, EXIT_FAILURE);
-	ft_printf("Success\n");
+	part.loc = HEAD_A;
+	part.size = data.a.len;
+	ps_sort(&data, &part);
 	ps_destroy_data_exit(&data, EXIT_SUCCESS);
 }

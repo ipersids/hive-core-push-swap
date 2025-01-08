@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:34:40 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 14:28:56 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:54:18 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* --------------------- Private function prototypes ----------------------- */
 
 static char		*create_list_from_input(char **list, int size);
-static int		*handle_list_input(char *list, int *dst, size_t *dst_size);
+static int		*handle_list_input(char *list, int **dst, size_t *dst_size);
 static t_bool	is_number_valid(const char *str, int *dst, int indx);
 static t_bool	is_number_duplicate(int num, int *dst, int dst_size);
 
@@ -26,11 +26,11 @@ int	*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size)
 	char	*tmp;
 
 	if (2 == argc)
-		return (handle_list_input(argv[1], *dst, dst_size));
+		return (handle_list_input(argv[1], dst, dst_size));
 	if (2 < argc)
 	{
 		tmp = create_list_from_input(argv + 1, argc - 1);
-		*dst = handle_list_input(tmp, *dst, dst_size);
+		*dst = handle_list_input(tmp, dst, dst_size);
 		free(tmp);
 		return (*dst);
 	}
@@ -68,7 +68,7 @@ static char	*create_list_from_input(char **list, int size)
 	return (res);
 }
 
-static int	*handle_list_input(char *list, int *dst, size_t *dst_size)
+static int	*handle_list_input(char *list, int **dst, size_t *dst_size)
 {
 	char	**temp_arr;
 	int		i;
@@ -81,19 +81,19 @@ static int	*handle_list_input(char *list, int *dst, size_t *dst_size)
 	*dst_size = 0;
 	while (NULL != temp_arr[*dst_size])
 		*dst_size += 1;
-	dst = (int *) malloc(*dst_size * sizeof(int));
-	if (!dst)
+	*dst = (int *) malloc(*dst_size * sizeof(int));
+	if (!*dst)
 		return (ps_free_arrays(NULL, (void **)temp_arr));
 	i = 0;
 	while (NULL != temp_arr[i])
 	{
-		if (!is_number_valid(temp_arr[i], dst, i))
-			return (ps_free_arrays((void *)dst, (void **)temp_arr));
-		dst[i] = ft_atoi(temp_arr[i]);
+		if (!is_number_valid(temp_arr[i], *dst, i))
+			return (ps_free_arrays((void *)(*dst), (void **)temp_arr));
+		(*dst)[i] = ft_atoi(temp_arr[i]);
 		i++;
 	}
 	ps_free_arrays(NULL, (void **)temp_arr);
-	return (dst);
+	return (*dst);
 }
 
 static t_bool	is_number_valid(const char *str, int *dst, int indx)

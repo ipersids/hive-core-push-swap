@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:41:49 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 17:06:42 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:38:43 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@ static t_bool	reverse_rotate(t_queue *this);
 
 /* --------------------------- Public Functions ---------------------------- */
 
-void	ps_rev_rotate_a(t_data *data)
+t_bool	ps_rev_rotate_a(t_data *data)
 {
 	if (!reverse_rotate(&data->a))
-		return ;
+		return (FALSE);
 	ps_save_command(data, rra);
+	return (TRUE);
 }
 
-void	ps_rev_rotate_b(t_data *data)
+t_bool	ps_rev_rotate_b(t_data *data)
 {
 	if (!reverse_rotate(&data->b))
-		return ;
+		return (FALSE);
 	ps_save_command(data, rrb);
+	return (TRUE);
 }
 
 /* ------------------- Private Function Implementation --------------------- */

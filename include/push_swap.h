@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 17:07:29 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:47:41 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,27 @@ t_bool	ps_sorted_ascending(const int *src, size_t src_len);
 t_bool	ps_stacks_init(t_data *data);
 
 void	ps_save_command(t_data *data, t_command command);
-void 	ps_swap_a(t_data *data);
-void	ps_swap_b(t_data *data);
-void	ps_push_a(t_data *data);
-void	ps_push_b(t_data *data);
-void	ps_rotate_a(t_data *data);
-void	ps_rotate_b(t_data *data);
-void	ps_rev_rotate_a(t_data *data);
-void	ps_rev_rotate_b(t_data *data);
+t_bool 	ps_swap_a(t_data *data);
+t_bool	ps_swap_b(t_data *data);
+t_bool	ps_push_a(t_data *data);
+t_bool	ps_push_b(t_data *data);
+t_bool	ps_rotate_a(t_data *data);
+t_bool	ps_rotate_b(t_data *data);
+t_bool	ps_rev_rotate_a(t_data *data);
+t_bool	ps_rev_rotate_b(t_data *data);
+
+void	ps_sort(t_data *data, t_partition *this_loc);
+void	ps_sort_three(t_data *data, t_partition *this_loc);
+void	ps_sort_two(t_data *data, t_partition *this_loc);
+void	ps_sort_one(t_data *data, t_partition *this_loc);
+
+void	ps_correct_this_loc(t_data *data, t_partition *this_loc);
+void	ps_init_parts(t_parts *part, t_partition *this_loc);
+
+int		ps_read_value(t_data *data, t_partition *this_loc);
+int		ps_max_value(t_data *data, t_partition *loc);
+t_queue	*ps_which_stack(t_data *data, t_partition *this_loc);
+
+size_t	ps_move_from_to(t_data *data, t_loc this_loc, t_loc dst_loc);
 
 #endif
