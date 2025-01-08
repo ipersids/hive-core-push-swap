@@ -6,23 +6,11 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:50:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 00:40:26 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 01:25:12 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void tmp_print_stack(t_queue *stack, char ch) {
-// 	size_t indx;
-// 	ft_printf("STACK '%c'\n", ch);
-// 	ft_printf("Queue size = %d, ", (int)stack->size);
-// 	ft_printf("current len = %d\n",(int)stack->len);
-// 	for (size_t i = 0; i < stack->len; i++) {
-// 		indx = (stack->read + i) % stack->size;
-// 		ft_printf("%d , ", (int)stack->buf[indx], (int)i);
-// 	}
-// 	ft_printf("\n");
-// }
 
 int	main(int argc, char **argv)
 {
@@ -41,8 +29,5 @@ int	main(int argc, char **argv)
 	part.size = data.a.size;
 	ps_sort(&data, &part);
 	ps_print_commands(&data.command);
-	// ft_printf("\nFINAL!\n");
-	// tmp_print_stack(&data.a, 'A');
-	// tmp_print_stack(&data.b, 'B');
 	ps_destroy_data_exit(&data, EXIT_SUCCESS);
 }

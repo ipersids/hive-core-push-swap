@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 00:28:59 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 01:25:17 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,5 @@ t_queue	*ps_which_stack(t_data *data, t_partition *this_loc);
 void	ps_print_commands(t_storage *command);
 
 size_t	ps_move_from_to(t_data *data, t_loc this_loc, t_loc dst_loc);
-
-// void tmp_print_stack(t_queue *stack, char ch); // TEST
 
 #endif

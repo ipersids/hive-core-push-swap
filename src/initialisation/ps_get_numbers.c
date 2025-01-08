@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:34:40 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 19:54:18 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 01:14:11 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,11 @@ static t_bool	is_number_valid(const char *str, int *dst, int indx)
 	i = 0;
 	while ('\0' != str[i])
 	{
+		if (0 == i && ('-' == str[i] || '+' == str[i]))
+		{
+			i++;
+			continue;
+		}
 		if (!ft_isdigit(str[i]))
 			return (FALSE);
 		i++;
