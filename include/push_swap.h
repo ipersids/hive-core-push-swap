@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 17:47:41 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 00:28:59 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef enum e_loc
 
 typedef enum e_command
 {
+	do_nothing,
 	sa,
 	sb,
 	ss,
@@ -35,7 +36,8 @@ typedef enum e_command
 	rr,
 	rra,
 	rrb,
-	rrr
+	rrr,
+	MAX_COMMANDS
 }	t_command;
 
 typedef struct s_storage
@@ -102,7 +104,10 @@ void	ps_init_parts(t_parts *part, t_partition *this_loc);
 int		ps_read_value(t_data *data, t_partition *this_loc);
 int		ps_max_value(t_data *data, t_partition *loc);
 t_queue	*ps_which_stack(t_data *data, t_partition *this_loc);
+void	ps_print_commands(t_storage *command);
 
 size_t	ps_move_from_to(t_data *data, t_loc this_loc, t_loc dst_loc);
+
+// void tmp_print_stack(t_queue *stack, char ch); // TEST
 
 #endif

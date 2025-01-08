@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:01:18 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 16:55:29 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 00:26:47 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ps_max_value(t_data *data, t_partition *loc)
 	if (HEAD_A == loc->loc || HEAD_B == loc->loc)
 		i = stack->read;
 	else
-		i = (stack->read + (stack->len - loc->size - 1)) % stack->size;
+		i = (stack->read + (stack->len - loc->size)) % stack->size;
 	j = 0;
 	while (j++ < loc->size)
 	{

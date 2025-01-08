@@ -6,13 +6,11 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 20:23:39 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 19:40:21 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 00:40:09 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void tmp_print_stack(t_queue *stack);
 
 static void	divide_to_parts(t_data *data, t_partition *this_loc, t_parts *part);
 static void set_partition_limits(t_partition *this_loc, int *pivot_1, \
@@ -25,12 +23,18 @@ void	ps_sort(t_data *data, t_partition *this_loc)
 	ps_correct_this_loc(data, this_loc);
 	if (3 >= this_loc->size)
 	{
+		// ft_printf("\nBEFORE OUT (this_loc.loc = %d, this_loc.size = %d)\n", (int)this_loc->loc, (int)this_loc->size);
+		// tmp_print_stack(&data->a, 'A');
+		// tmp_print_stack(&data->b, 'B');
 		if (3 == this_loc->size)
 			ps_sort_three(data, this_loc);
 		if (2 == this_loc->size)
 			ps_sort_two(data, this_loc);
 		if (1 == this_loc->size)
 			ps_sort_one(data, this_loc);
+		// ft_printf("AFTER OUT (this_loc.loc = %d, this_loc.size = %d)\n", (int)this_loc->loc, (int)this_loc->size);
+		// tmp_print_stack(&data->a, 'A');
+		// tmp_print_stack(&data->b, 'B');
 		return ;
 	}
 	ps_init_parts(&part, this_loc);
