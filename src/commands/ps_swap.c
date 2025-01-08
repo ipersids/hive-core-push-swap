@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 15:56:01 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 16:23:30 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:40:03 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@ static t_bool	swap(t_queue *where);
 
 /* --------------------------- Public Functions ---------------------------- */
 
-void	ps_swap_a(t_data *data)
+t_bool	ps_swap_a(t_data *data)
 {
 	if (!swap(&data->a))
-		return ;
+		return (FALSE);
 	ps_save_command(data, sa);
+	return (TRUE);
 }
 
-void	ps_swap_b(t_data *data)
+t_bool	ps_swap_b(t_data *data)
 {
 	if (!swap(&data->b))
-		return ;
+		return (FALSE);
 	ps_save_command(data, sb);
+	return (TRUE);
 }
 
 /* ------------------- Private Function Implementation --------------------- */

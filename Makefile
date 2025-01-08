@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/07 17:30:28 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/08 18:58:13 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SUBM_LIBFT_LIB	:= $(SUBM_LIBFT_DIR)/libft$(LIB_EXT)
 
 # Compilation variables
 CC				:= clang
-CFLAGS			:= -Wall -Wextra -Werror
+CFLAGS			:= -Wall -Wextra -Werror -g
 HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include -Iinclude
 LIBS			:= -L$(SUBM_LIBFT_DIR) -lft
 
@@ -58,6 +58,14 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/commands/ps_rotate.c \
 				   src/commands/ps_swap.c \
 				   src/commands/ps_save_command.c \
+				   \
+				   src/push-swap/ps_move_from_to.c \
+				   src/push-swap/ps_sort_helpers.c \
+				   src/push-swap/ps_sort_one.c \
+				   src/push-swap/ps_sort_three.c \
+				   src/push-swap/ps_sort_two.c \
+				   src/push-swap/ps_sort.c \
+				   src/push-swap/ps_value_helpers.c
 				   \
 
 SRC_MAIN		:= src/main.c
@@ -99,7 +107,7 @@ TEST_OBJS		:= $(TEST_SRCS:%.c=%.o)
 test: update-submodule build-submodule $(TEST_NAME)
 
 $(TEST_NAME): $(OBJS) $(TEST_OBJS)
-	$(CC) $(CFLAGS) -g $(TEST_OBJS) $(OBJS) $(HDRS) $(LIBS) -o $(TEST_NAME)
+	$(CC) $(CFLAGS) $(TEST_OBJS) $(OBJS) $(HDRS) $(LIBS) -o $(TEST_NAME)
 
 tclean: clean
 	$(RM) -f $(TEST_NAME) $(TEST_OBJS)
