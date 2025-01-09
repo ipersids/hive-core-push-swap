@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 15:12:29 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:25:58 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ t_bool	ps_rotate_b(t_data *data);
 t_bool	ps_rev_rotate_a(t_data *data);
 t_bool	ps_rev_rotate_b(t_data *data);
 
+void	ps_choose_sort(t_data *data, t_partition *this_loc);
 void	ps_sort(t_data *data, t_partition *this_loc);
 void	ps_sort_three(t_data *data, t_partition *this_loc);
 void	ps_sort_two(t_data *data, t_partition *this_loc);

@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/09 13:49:13 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/09 15:48:01 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/commands/ps_rotate.c \
 				   src/commands/ps_swap.c \
 				   src/commands/ps_save_command.c \
+				   src/commands/ps_print_commands.c \
 				   \
 				   src/push-swap/ps_move_from_to.c \
 				   src/push-swap/ps_sort_helpers.c \
@@ -66,7 +67,7 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/push-swap/ps_sort_two.c \
 				   src/push-swap/ps_sort.c \
 				   src/push-swap/ps_value_helpers.c \
-				   src/commands/ps_print_commands.c \
+				   src/push-swap/ps_choose_sort.c \
 				   \
 
 SRC_MAIN		:= src/main.c

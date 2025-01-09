@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:50:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 13:23:47 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:26:11 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		ps_destroy_data_exit(&data, EXIT_FAILURE);
 	part.loc = HEAD_A;
 	part.size = data.a.size;
-	ps_sort(&data, &part);
+	ps_choose_sort(&data, &part);
 	ps_print_commands(&data.command);
 	ps_destroy_data_exit(&data, EXIT_SUCCESS);
 }
