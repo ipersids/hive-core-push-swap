@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/08 23:01:18 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/09 13:49:13 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/circular-buffer/queue_remove_last.c \
 				   \
 				   src/destructor/ps_destroy_data_exit.c \
-				   src/destructor/ps_free_arrays.c \
+				   src/destructor/ps_free_array.c \
 				   \
 				   src/initialisation/ps_data_init.c \
 				   src/initialisation/ps_get_numbers.c \

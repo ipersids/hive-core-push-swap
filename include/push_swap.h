@@ -6,14 +6,15 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 01:25:17 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:12:29 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "circular_buffer.h"
+# include "circular_buffer.h"
+# include "libft.h"
 
 typedef enum e_loc
 {
@@ -75,7 +76,7 @@ typedef struct s_data
 }				t_data;
 
 void	ps_destroy_data_exit(t_data *data, int exit_code);
-void	*ps_free_arrays(void *arr1, void **arr2);
+void	*ps_free_array(void **arr2);
 
 void	ps_data_init(t_data *data);
 int		*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size);

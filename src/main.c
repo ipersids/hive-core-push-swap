@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:50:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 01:25:12 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:23:47 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (!data.input.num)
 		ps_destroy_data_exit(&data, EXIT_FAILURE);
 	if (ps_sorted_ascending(data.input.num, data.input.len))
-		ps_destroy_data_exit(&data, EXIT_SUCCESS);
+		ps_destroy_data_exit(&data, EXIT_FAILURE);
 	if (!ps_stacks_init(&data))
 		ps_destroy_data_exit(&data, EXIT_FAILURE);
 	part.loc = HEAD_A;

@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:34:40 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 01:14:11 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:48:30 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,16 @@ static int	*handle_list_input(char *list, int **dst, size_t *dst_size)
 		*dst_size += 1;
 	*dst = (int *) malloc(*dst_size * sizeof(int));
 	if (!*dst)
-		return (ps_free_arrays(NULL, (void **)temp_arr));
+		return (ps_free_array((void **)temp_arr));
 	i = 0;
 	while (NULL != temp_arr[i])
 	{
 		if (!is_number_valid(temp_arr[i], *dst, i))
-			return (ps_free_arrays((void *)(*dst), (void **)temp_arr));
+			return (ps_free_array((void **)temp_arr));
 		(*dst)[i] = ft_atoi(temp_arr[i]);
 		i++;
 	}
-	ps_free_arrays(NULL, (void **)temp_arr);
+	ps_free_array((void **)temp_arr);
 	return (*dst);
 }
 
