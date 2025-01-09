@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 15:56:01 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 13:40:03 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 21:32:10 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ t_bool	ps_swap_b(t_data *data)
 		return (FALSE);
 	ps_save_command(data, sb);
 	return (TRUE);
+}
+
+void	ps_swap_ab(t_data *data)
+{
+	ps_swap_a(data);
+	ps_swap_b(data);
 }
 
 /* ------------------- Private Function Implementation --------------------- */

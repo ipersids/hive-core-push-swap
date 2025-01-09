@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/09 15:48:01 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/09 20:41:38 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ endif
 
 # Program name
 NAME			:= push_swap
+NAME_BNS		:= checker
 
 # Submodule libft
 SUBM_LIBFT_DIR	:= libft
@@ -70,9 +71,19 @@ SRCS			:= src/circular-buffer/queue_add_vip.c \
 				   src/push-swap/ps_choose_sort.c \
 				   \
 
-SRC_MAIN		:= src/main.c
+SRCS_BNS		:= src/checker/checker_do_command.c \
+				   src/checker/checker_is_aftersorted.c \
+				   src/checker/checker_is_presorted.c \
+				   \
+
+SRC_MAIN		:= src/push_swap_main.c
+SRC_MAIN_BNS	:= src/checker_main.c
+
 OBJS			:= $(SRCS:%.c=%.o)
+OBJS_BNS		:= $(SRCS_BNS:%.c=%.o)
+
 OBJ_MAIN		:= $(SRC_MAIN:%.c=%.o)
+OBJ_MAIN_BNS	:= $(SRC_MAIN_BNS:%.c=%.o)
 
 # RULES
 all: update-submodule build-submodule $(NAME)
@@ -84,11 +95,11 @@ $(NAME): $(OBJS) $(OBJ_MAIN)
 	$(CC) $(CFLAGS) $(HDRS) -c $< -o $@
 
 clean:
-	$(RM) -f $(OBJS) $(OBJ_MAIN)
+	$(RM) -f $(OBJS) $(OBJ_MAIN) $(OBJS_BNS)
 	$(MAKE) -C $(SUBM_LIBFT_DIR) clean
 
 fclean: clean
-	$(RM) -rf $(NAME)
+	$(RM) -rf $(NAME) $(NAME_BNS)
 	$(MAKE) -C $(SUBM_LIBFT_DIR) fclean
 
 re: fclean all
@@ -101,17 +112,10 @@ update-submodule:
 build-submodule:
 	$(MAKE) -C $(SUBM_LIBFT_DIR) 
 
-# TESTING
-TEST_NAME		:= test_main
-TEST_SRCS		:= test_main.c
-TEST_OBJS		:= $(TEST_SRCS:%.c=%.o)
 
-test: update-submodule build-submodule $(TEST_NAME)
+bonus: update-submodule build-submodule $(NAME_BNS)
 
-$(TEST_NAME): $(OBJS) $(TEST_OBJS)
-	$(CC) $(CFLAGS) $(TEST_OBJS) $(OBJS) $(HDRS) $(LIBS) -o $(TEST_NAME)
-
-tclean: clean
-	$(RM) -f $(TEST_NAME) $(TEST_OBJS)
+$(NAME_BNS): $(OBJS) $(OBJS_BNS) $(OBJ_MAIN_BNS)
+	$(CC) $(CFLAGS) $(OBJS) $(OBJS_BNS) $(OBJ_MAIN_BNS) $(HDRS) $(LIBS) -o $(NAME_BNS)
 
 .PHONY: all clean fclean re update-submodule build-submodule

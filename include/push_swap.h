@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 16:29:27 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 20:44:51 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,13 @@ typedef struct s_data
 	t_queue		b;
 	t_storage	command;
 	t_input		input;
+	t_bool		is_checker;
 }				t_data;
 
 void	ps_destroy_data_exit(t_data *data, int exit_code);
 void	*ps_free_array(void **arr2);
 
-void	ps_data_init(t_data *data);
+void	ps_data_init(t_data *data, t_bool is_checker);
 int		*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size);
 void	ps_rank_ascending(t_queue *dest, int *src, size_t src_len);
 t_bool	ps_sorted_ascending(const int *src, size_t src_len);
@@ -93,6 +94,9 @@ t_bool	ps_rotate_a(t_data *data);
 t_bool	ps_rotate_b(t_data *data);
 t_bool	ps_rev_rotate_a(t_data *data);
 t_bool	ps_rev_rotate_b(t_data *data);
+void	ps_rev_rotate_ab(t_data *data);
+void	ps_rotate_ab(t_data *data);
+void	ps_swap_ab(t_data *data);
 
 void	ps_choose_sort(t_data *data, t_partition *this_loc);
 void	ps_sort(t_data *data, t_partition *this_loc);

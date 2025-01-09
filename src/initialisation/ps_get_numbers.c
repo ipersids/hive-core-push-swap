@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:34:40 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 16:32:59 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 22:27:36 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size)
 {
 	char	*tmp;
 
-	if (2 == argc)
+	if (2 == argc && '\0' != *argv[1])
 		return (handle_list_input(argv[1], dst, dst_size));
 	if (2 < argc)
 	{
@@ -104,7 +104,7 @@ static t_bool	is_number_valid(const char *str, int *dst, int indx)
 	i = 0;
 	while ('\0' != str[i])
 	{
-		if (0 == i && ('-' == str[i] || '+' == str[i]))
+		if (0 == i && ('-' == str[i] || '+' == str[i]) && 1 < ft_strlen(str))
 		{
 			i++;
 			continue ;

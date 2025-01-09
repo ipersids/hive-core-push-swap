@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:34:34 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 13:39:19 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 20:18:44 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ t_bool	ps_rotate_b(t_data *data)
 		return (FALSE);
 	ps_save_command(data, rb);
 	return (TRUE);
+}
+
+void	ps_rotate_ab(t_data *data)
+{
+	ps_rotate_a(data);
+	ps_rotate_b(data);
 }
 
 /* ------------------- Private Function Implementation --------------------- */

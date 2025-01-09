@@ -6,13 +6,13 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:54:59 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/07 17:15:35 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:55:26 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_data_init(t_data *data)
+void	ps_data_init(t_data *data, t_bool is_checker)
 {
 	data->a.buf = NULL;
 	data->a.len = 0;
@@ -29,4 +29,5 @@ void	ps_data_init(t_data *data)
 	data->command.capacity = 0;
 	data->input.num = NULL;
 	data->input.len = 0;
+	data->is_checker = is_checker;
 }

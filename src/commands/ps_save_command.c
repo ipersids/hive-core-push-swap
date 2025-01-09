@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:09:35 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 19:31:06 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:56:36 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ps_save_command(t_data *data, t_command command)
 	size_t	old_capacity;
 	int8_t	*tmp;
 
+	if (TRUE == data->is_checker)
+		return ;
 	if (data->command.len >= data->command.capacity)
 	{
 		old_capacity = data->command.capacity;
