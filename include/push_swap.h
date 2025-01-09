@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:21:52 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 15:25:58 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:29:27 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_bool	ps_sorted_ascending(const int *src, size_t src_len);
 t_bool	ps_stacks_init(t_data *data);
 
 void	ps_save_command(t_data *data, t_command command);
-t_bool 	ps_swap_a(t_data *data);
+t_bool	ps_swap_a(t_data *data);
 t_bool	ps_swap_b(t_data *data);
 t_bool	ps_push_a(t_data *data);
 t_bool	ps_push_b(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 16:40:47 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 00:29:17 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:39:41 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 /* --------------------- Private function prototypes ----------------------- */
 
-static void sort_three_head_a(t_data *data, t_partition *this_loc, int *max);
-static void sort_three_tail_a(t_data *data, t_partition *this_loc, int *max);
-static void sort_three_head_b(t_data *data, t_partition *this_loc, int *max);
-static void sort_three_tail_b(t_data *data, t_partition *this_loc, int *max);
+static void	sort_three_head_a(t_data *data, t_partition *this_loc, int *max);
+static void	sort_three_tail_a(t_data *data, t_partition *this_loc, int *max);
+static void	sort_three_head_b(t_data *data, t_partition *this_loc, int *max);
+static void	sort_three_tail_b(t_data *data, t_partition *this_loc, int *max);
 
 /* --------------------------- Public Functions ---------------------------- */
 
@@ -39,7 +39,7 @@ void	ps_sort_three(t_data *data, t_partition *this_loc)
 
 /* ------------------- Private Function Implementation --------------------- */
 
-static void sort_three_head_a(t_data *data, t_partition *this_loc, int *max)
+static void	sort_three_head_a(t_data *data, t_partition *this_loc, int *max)
 {
 	t_queue	*stack;
 
@@ -60,7 +60,7 @@ static void sort_three_head_a(t_data *data, t_partition *this_loc, int *max)
 	ps_sort_two(data, this_loc);
 }
 
-static void sort_three_tail_a(t_data *data, t_partition *this_loc, int *max)
+static void	sort_three_tail_a(t_data *data, t_partition *this_loc, int *max)
 {
 	t_queue	*stack;
 
@@ -85,7 +85,7 @@ static void sort_three_tail_a(t_data *data, t_partition *this_loc, int *max)
 	ps_sort_two(data, this_loc);
 }
 
-static void sort_three_head_b(t_data *data, t_partition *this_loc, int *max)
+static void	sort_three_head_b(t_data *data, t_partition *this_loc, int *max)
 {
 	t_queue	*stack;
 
@@ -109,7 +109,7 @@ static void sort_three_head_b(t_data *data, t_partition *this_loc, int *max)
 	ps_sort_two(data, this_loc);
 }
 
-static void sort_three_tail_b(t_data *data, t_partition *this_loc, int *max)
+static void	sort_three_tail_b(t_data *data, t_partition *this_loc, int *max)
 {
 	t_queue	*stack;
 

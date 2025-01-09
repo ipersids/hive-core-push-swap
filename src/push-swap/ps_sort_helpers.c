@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 22:33:18 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 18:09:29 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:38:57 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /* --------------------- Private function prototypes ----------------------- */
 
-static void init_parts_a(t_parts *part, t_partition *this_loc);
-static void init_parts_b(t_parts *part, t_partition *this_loc);
+static void	init_parts_a(t_parts *part, t_partition *this_loc);
+static void	init_parts_b(t_parts *part, t_partition *this_loc);
 
 /* --------------------------- Public Functions ---------------------------- */
 
-void ps_correct_this_loc(t_data *data, t_partition *this_loc)
+void	ps_correct_this_loc(t_data *data, t_partition *this_loc)
 {
 	if (TAIL_A == this_loc->loc && data->a.len == this_loc->size)
 		this_loc->loc = HEAD_A;
@@ -40,7 +40,7 @@ void	ps_init_parts(t_parts *part, t_partition *this_loc)
 
 /* ------------------- Private Function Implementation --------------------- */
 
-static void init_parts_a(t_parts *part, t_partition *this_loc)
+static void	init_parts_a(t_parts *part, t_partition *this_loc)
 {
 	if (HEAD_A == this_loc->loc)
 	{
@@ -57,7 +57,7 @@ static void init_parts_a(t_parts *part, t_partition *this_loc)
 	}
 }
 
-static void init_parts_b(t_parts *part, t_partition *this_loc)
+static void	init_parts_b(t_parts *part, t_partition *this_loc)
 {
 	if (HEAD_B == this_loc->loc)
 	{

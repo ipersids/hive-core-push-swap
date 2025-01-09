@@ -6,13 +6,17 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:48:01 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/08 23:03:01 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:32:19 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* --------------------- Private function prototypes ----------------------- */
+
 static char	*get_commang_string(t_command i);
+
+/* --------------------------- Public Functions ---------------------------- */
 
 void	ps_print_commands(t_storage *command)
 {
@@ -25,6 +29,8 @@ void	ps_print_commands(t_storage *command)
 		i++;
 	}
 }
+
+/* ------------------- Private Function Implementation --------------------- */
 
 static char	*get_commang_string(t_command i)
 {

@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:50:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 15:26:11 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:33:31 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_data 		data;
+	t_data		data;
 	t_partition	part;
 
 	ps_data_init(&data);

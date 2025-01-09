@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:16:41 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 16:15:34 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:40:24 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	hardcode_sort_three(t_data *data)
 {
 	int	one;
 	int	two;
-	int three;
+	int	three;
 
 	one = data->a.buf[data->a.read];
 	two = data->a.buf[(data->a.read + 1) % data->a.size];
@@ -67,7 +67,8 @@ static void	hardcode_sort_five(t_data *data)
 		else
 			ps_rotate_a(data);
 	}
-	if (data->b.buf[data->b.read] < data->b.buf[(data->b.read + 1) % data->b.size])
+	if (data->b.buf[data->b.read] \
+		< data->b.buf[(data->b.read + 1) % data->b.size])
 		ps_swap_b(data);
 	hardcode_sort_three(data);
 	ps_push_a(data);
