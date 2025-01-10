@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:34:40 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 22:27:36 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:39:18 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	*ps_get_numbers(int argc, char **argv, int **dst, size_t *dst_size)
 	if (2 < argc)
 	{
 		tmp = create_list_from_input(argv + 1, argc - 1);
-		*dst = handle_list_input(tmp, dst, dst_size);
+		handle_list_input(tmp, dst, dst_size);
 		free(tmp);
 		return (*dst);
 	}
@@ -64,7 +64,7 @@ static char	*create_list_from_input(char **list, int size)
 		res[len++] = ' ';
 		i++;
 	}
-	res[len] = '\0';
+	res[len - 1] = '\0';
 	return (res);
 }
 
@@ -73,12 +73,9 @@ static int	*handle_list_input(char *list, int **dst, size_t *dst_size)
 	char	**temp_arr;
 	int		i;
 
-	if (!list)
-		return (NULL);
 	temp_arr = ft_split(list, ' ');
 	if (!temp_arr)
 		return (NULL);
-	*dst_size = 0;
 	while (NULL != temp_arr[*dst_size])
 		*dst_size += 1;
 	*dst = (int *) malloc(*dst_size * sizeof(int));
@@ -88,7 +85,11 @@ static int	*handle_list_input(char *list, int **dst, size_t *dst_size)
 	while (NULL != temp_arr[i])
 	{
 		if (!is_number_valid(temp_arr[i], *dst, i))
+		{
+			free(*dst);
+			*dst = NULL;
 			return (ps_free_array((void **)temp_arr));
+		}
 		(*dst)[i] = ft_atoi(temp_arr[i]);
 		i++;
 	}
