@@ -6,7 +6,7 @@
 /*   By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 20:23:25 by ipersids          #+#    #+#             */
-/*   Updated: 2025/01/09 21:27:10 by ipersids         ###   ########.fr       */
+/*   Updated: 2025/01/10 01:39:24 by ipersids         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	checker_is_aftersorted(t_data *data)
 		{
 			if (data->a.buf[i] > data->a.buf[j])
 			{
-				ft_printf("KO\n"); //
+				ft_printf("KO\n");
 				ps_destroy_data_exit(data, EXIT_SUCCESS);
 			}
 			j = (j + 1) % data->a.size;

@@ -6,7 +6,7 @@
 #    By: ipersids <ipersids@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 13:50:43 by ipersids          #+#    #+#              #
-#    Updated: 2025/01/09 20:41:38 by ipersids         ###   ########.fr        #
+#    Updated: 2025/01/10 01:44:01 by ipersids         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SUBM_LIBFT_LIB	:= $(SUBM_LIBFT_DIR)/libft$(LIB_EXT)
 
 # Compilation variables
 CC				:= clang
-CFLAGS			:= -Wall -Wextra -Werror -g
+CFLAGS			:= -Wall -Wextra -Werror #-g
 HDRS			:= -I. -I$(SUBM_LIBFT_DIR)/include -Iinclude
 LIBS			:= -L$(SUBM_LIBFT_DIR) -lft
 
@@ -95,7 +95,7 @@ $(NAME): $(OBJS) $(OBJ_MAIN)
 	$(CC) $(CFLAGS) $(HDRS) -c $< -o $@
 
 clean:
-	$(RM) -f $(OBJS) $(OBJ_MAIN) $(OBJS_BNS)
+	$(RM) -f $(OBJS) $(OBJ_MAIN) $(OBJS_BNS) $(OBJ_MAIN_BNS)
 	$(MAKE) -C $(SUBM_LIBFT_DIR) clean
 
 fclean: clean
