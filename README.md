@@ -13,10 +13,16 @@
 The goal is to sort a stack of integers using:   
 * Two stacks: stack A (initial stack) and stack B (temporary stack).  
 * A limited set of operations to manipulate the stacks.  
-* Limited number of moves (less than 5500 for set of 500 integers for highest grade).
+* The output should be a set of operations that sort a stack in a limited number of moves (less than 5500 for a set of 500 integers for the highest grade).
 
 ### Solution
 The solution uses a **circular buffer** for the stack implementation, improving performance. Sorting is achieved with a customised **quick sort algorithm**, designed to generate the required stack operations efficiently and minimise the number of moves. The approach was inspired by results shared by 42 School Seoul peers and this [article](https://medium.com/@ulysse.gerkens/push-swap-in-less-than-4200-operations-c292f034f6c0) by Ulysse Gerkens.   
+
+### Performance  
+Worst-case scenario for a set of integers:  
+* 500 integers — 4300 moves.  
+* 100 integers — 640 moves.  
+
 
 <div align="center">
 <picture>
